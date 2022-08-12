@@ -1,54 +1,20 @@
 <html>  
-
 <head>  
 <title> Student Registration Form</title> 
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
-</head>  
-
-<body align="center" >  
-<h1> CREATE YOUR ACCOUNT</h1>  
-<table cellspacing="2" align="center" cellpadding="8" border="0">  
-
-<tr>
-<td> Name</td>   
-<td><input type="text" placeholder="Enter your name" id="n1"></td>
-</tr>  
-
-<tr>
-<td>Email </td>  
-<td><input type="text" placeholder="Enter your email id" id="e1"></td>
-</tr>  
-
-<tr>
-<td> Set Password</td>  
-<td><input type="password" placeholder="Set a password" id="p1"></td>
-</tr>  
-
-<tr>
-<td>Confirm Password</td>  
-<td><input type="password" placeholder="Confirm your password" id="p2"></td>
-</tr>  
-
-<tr><td>  
-<input type="submit" value="Create" onClick="create_account()"/>  
-</table>  
-
-<script type="text/javascript">  
-function create_account(){  
+<link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript">
+    
+function validate()
+{
 var n=document.getElementById("n1").value;  
 var e=document.getElementById("e1").value;  
-var p=document.getElementById("p1").value;  
-var cp=document.getElementById("p2").value;  
+var mn=document.getElementById("n2").value;  
+var u=document.getElementById("u1").value;  
 //Code for password validation  
         var letters = /^[A-Za-z]+$/;  
         var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
 //other validations required code  
-if(n==''||e==''||p==''||cp==''){  
+if(n==''||e==''||mn==''||u==''){  
 alert("Enter each details correctly");  
 }  
 else if(!letters.test(n))  
@@ -59,7 +25,7 @@ else if (!email_val.test(e))
         {  
             alert('Invalid email format please enter valid email id');  
         }  
-else if(p!=cp)  
+else if(!)  
 {  
 alert("Passwords not matching");  
 }  
@@ -77,5 +43,60 @@ window.location="https://www.javatpoint.com/";
 }  
 }  
 </script>  
+  
+<style>
+  form, th, tr{
+    border: 5px;
+    border-collapse: collapse;
+  }
+</head>  
+
+<body align="center" >  
+<h1> Student Registration Form</h1>  
+  <form action="b.html" name="myForm" onsubmit="return(validate());">
+  <table cellspacing="2" align="center" cellpadding="8" border="0">  
+
+<tr>
+<td> First Name </td>   
+<td><input type="text" placeholder="Enter your first name" id="n1"></td>
+</tr> 
+  
+<tr>
+<td> Last Name </td>   
+<td><input type="text" placeholder="Enter your last name" id="n1"></td>
+</tr>  
+
+<tr>
+<td>Email </td>  
+<td><input type="text" placeholder="Enter your email id" id="e1"></td>
+</tr>
+  
+<tr>
+  <td align=right> Gender</td>
+  <td> <input type="radio" name="gender" value="Male">Male <br>
+       <input type="radio" name="gender" value="Female">Female</td>
+</tr>
+
+<tr>
+  <td> Birth Date </td>
+  <td> <input type="date" name="bdate"/> </td>
+</tr>
+  
+<tr>
+<td> Mobile number</td>  
+<td><input type="tel" placeholder="Enter mobile number" id="n2"></td>
+</tr>  
+
+<tr>
+<td>University</td>  
+<td><input type="text" placeholder="Enter university name" id="u1"></td>
+</tr>  
+
+<tr>
+  <td colspan="2" padding="5px"><center> <input type="submit" value="Submit" </center></td>
+</tr>
+  
+</table>  
+</form>  
 </body>  
 </html>  
